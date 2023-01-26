@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <link type="text/css" href="{{url_for('static', filename='css/light.css')}}" rel="stylesheet">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+</head>
+<body>
+
+<img src="static/images/fit.png" width="300">
+
+  <h1>WebApp Exploitation Quiz</h1>
+  <h3>Test your knowledge of web app exploits</h3>
+  <p>Put the number that best matches the definition in the prompt</p>
+  <p> Answers (1) Local File Inclusion (2) SQL Injection (3) Command Injection (4) Cross-Site-Scripting </p> 
+
+  <form method="POST">
+
+    <div style="margin: 2rem 0;">
+    <label for="user" style="font-weight:bold; display: block; margin-bottom: .4rem;"> Username: </label> 
+    <input id="user" type="text" name="user" required placeholder="e.g bob" style="width: 100%;" value="{% if url_input %}{{ url_input }}{% endif %}">
+    </div>
+
+    <div style="margin: 2rem 0;">
+    <label for="q1-input" style="font-weight:bold; display: block; margin-bottom: .4rem;"> _________ is the placement of malicious code in SQL statements, via web page input:</label>
+    <input id="q1-input" type="text" name="q1" required placeholder="e.g 4" style="width: 100%;" value="{% if url_input %}{{ url_input }}{% endif %}">
+    </div>
+
+    <div style="margin: 2rem 0;">
+    <label for="q2-input" style="font-weight:bold; display: block; margin-bottom: .4rem;">___________ attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites:</label>
+    <input id="q2-input" type="text" name="q2" required placeholder="e.g 3" style="width: 100%;" value="{% if url_input %}{{ url_input }}{% endif %}">
+    </div>
+
+    <div style="margin: 2rem 0;">
+    <label for="q3-input" style="font-weight:bold; display: block; margin-bottom: .4rem;">___________ facilitates the execution arbitrary commands on a server due to poorly sanitized input to a system() shell:</label>
+    <input id="q3-input" type="text" name="q3" required placeholder="e.g 2" style="width: 100%;" value="{% if url_input %}{{ url_input }}{% endif %}">
+    </div>
+
+    <div style="margin: 2rem 0;">
+    <label for="q4-input" style="font-weight:bold; display: block; margin-bottom: .4rem;">___________ allows an attacker to read the contents a local file exploiting the poorly sanitized input of a dynamic file inclusion:</label>
+    <input id="q4-input" type="text" name="q4" required placeholder="e.g 1" style="width: 100%;" value="{% if url_input %}{{ url_input }}{% endif %}">
+    </div>
+
+    <button type="submit">Submit Your Answers</button>
+    
+  </form>
+
+  <hr style="margin: 3rem 0 2rem 0;">
+  <footer >
+    <p> Florida Tech Cyber Range </p>
+  </footer>
+</body>
+</html>
+
